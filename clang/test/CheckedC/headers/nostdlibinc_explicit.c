@@ -20,6 +20,8 @@
 // CHECK: assert.h
 #include <errno_checked.h>
 // CHECK: errno.h
+#include <fcntl_checked.h>
+// CHECK: fcntl.h
 #include <fenv_checked.h>
 // CHECK: fenv.h
 #include <inttypes_checked.h>
@@ -34,12 +36,13 @@
 // CHECK: stdlib.h
 #include <string_checked.h>
 // CHECK: string.h
+#include <sys/stat_checked.h>
+// CHECK: stat.h
 #include <time_checked.h>
 // CHECK: time.h
-//
-//
-// The following four files: threads.h unistd.h sys/socket.h arpa/inet.h
-// cannot be added here in this test case because a #if __has_include_next
-// guard is already present in each of these files to account for the
-// potential absence of the corresponding system header file.
+
+// Wrapper header files for system header files that don't exist on Windows
+// cannot be added here because they test for the system header via
+// __has_include_next and generate an `#error` instead of a -MG entry for the
+// system header.
 

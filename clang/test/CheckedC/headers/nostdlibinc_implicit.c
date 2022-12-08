@@ -26,6 +26,10 @@
 #include <errno.h>
 #endif
 // CHECK: errno.h
+#if __has_include (<fcntl.h>)
+#include <fcntl.h>
+#endif
+// CHECK: fcntl.h
 #if __has_include (<fenv.h>)
 #include <fenv.h>
 #endif
@@ -54,14 +58,18 @@
 #include <string.h>
 #endif
 // CHECK: string.h
+#if __has_include (<sys/stat.h>)
+#include <sys/stat.h>
+#endif
+// CHECK: stat.h
 #if __has_include (<time.h>)
 #include <time.h>
 #endif
 // CHECK: time.h
 
-// The following four files: threads.h unistd.h sys/socket.h arpa/inet.h
-// cannot be added here in this test case because a #if __has_include_next
-// guard is already present in each of these files to account for the
-// potential absence of the corresponding system header file.
+// Wrapper header files for system header files that don't exist on Windows
+// cannot be added here because they test for the system header via
+// __has_include_next and generate an `#error` instead of a -MG entry for the
+// system header.
 
 #endif
