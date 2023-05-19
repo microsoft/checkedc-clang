@@ -32,7 +32,7 @@ for a basic build:
 # Get a copy of the Checked C system headers. Use Microsoft's
 # "checkedc" repository regardless of which "checkedc-clang"
 # repository you use.
-git clone https://github.com/microsoft/checkedc llvm/projects/checkedc-wrapper/checkedc
+git clone https://github.com/microsoft/checkedc-clang llvm/projects/checkedc-wrapper/checkedc
 
 mkdir build && cd build
 cmake ../llvm -G Ninja -DLLVM_ENABLE_PROJECTS=clang
