@@ -19,10 +19,7 @@ fiddly](#mac-os-x), but we have managed it so far.
 
 ## Basics
 
-As described [here](README.md#which-checkedc-clang-repository-to-use),
-you can use either
-https://github.com/correctcomputation/checkedc-clang or
-https://github.com/microsoft/checkedc-clang (or, of course, a
+Start by cloning [Microsoft's](https://github.com/microsoft/checkedc-clang) repo (or, of course, a
 third-party fork, though we can't be responsible for that). Assuming
 you have already cloned one of these repositories, run the following
 (from the `checkedc-clang` directory or whatever you named your clone)
